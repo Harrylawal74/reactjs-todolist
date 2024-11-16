@@ -16,7 +16,8 @@ export default function TodoList(props) {
                 //Renders TodoCard
                 ///when mapping, parent element needs a unique key, todoIndex is unique for each todo
                 /// mapping means {todo} is written once then each element in the array is output
-                <TodoCard key={todoIndex}>
+                //the {todo} used in the code becomes a child of TodoCard and is destructed as 'children' in TodoCard.jsx 
+                <TodoCard {...props} key={todoIndex} index={todoIndex}>
                     <p>{todo}</p>
                 </TodoCard>
             )

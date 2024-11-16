@@ -2,16 +2,27 @@
 import React from 'react'
 
 export default function TodoCard(props) {
-    //props are passed to TodoInput.jsx
-    //destructures out children from props
-    //children are defined in TodoList.jsx inside the TodoCard render 
-    const {children} = props
+    //functions 'handleDeleteTodo', 'index' and 'handleEditTodo' are passed from parent component Apps.jsx through TodoList.jsx to TodoCard.jsx as props
+    //destructures out 'handleDeleteTodo', 'index' and 'handleEditTodo' from props
+    //children are defined in TodoList.jsx inside the TodoCard render (any js used inside the jsx code)
+    //destructures out children and handleDeleteTodo from props
+    const {children, handleDeleteTodo, index, handleEditTodo} = props
     return (
+        // delete and edit buttons
         <li className='todoItem'>
             {children}
             <div className='actionsContainer'>
-                <i className="fa-solid fa-pen-to-square"></i>
-                <i className="fa-solid fa-trash"></i>
+                <button onClick={() => {
+                    handleEditTodo(index)
+                }}>
+                    <i className="fa-solid fa-pen-to-square"></i>
+                </button>
+
+                <button onClick={() => 
+                    handleDeleteTodo(index)
+                }>
+                    <i className="fa-solid fa-trash"></i>
+                </button>
             </div>
         </li>
   )
