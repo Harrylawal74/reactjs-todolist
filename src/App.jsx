@@ -3,7 +3,7 @@ import TodoInput from "./components/TodoInput"
 import TodoList from "./components/TodoList"
 
 function App() {
-  ///multiple components need access to todos list therefore todos list must be defined in the parent component Apps.jsx
+  ///multiple components need access to todos list therefore todos list must be defined in the parent component Apps.jsx (anything that needs to be accessed in multiple components should be defined in the root component App.jsx in this example )
   /// todos is the array name. setTodos is a setter function used to update the value of the array
   ///the array is a useState becuase it is dynamic and can change value
   const [todos, setTodos] = useState([])
